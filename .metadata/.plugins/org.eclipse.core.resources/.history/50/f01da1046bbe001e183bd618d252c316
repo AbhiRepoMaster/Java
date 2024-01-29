@@ -1,0 +1,27 @@
+package com.example.selinium;
+
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.edge.EdgeDriver;
+
+
+public class Selenium {
+
+	
+	public static void main(String[] args) {  
+		System.setProperty("webdriver.edge.driver", "D:\\Selenium_Projects\\msedgedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+		//C:\Program Files\Google\Chrome\Application\chrome.exe
+	    WebDriver driver=new EdgeDriver();  
+	      
+	// Launch website  
+	    driver.navigate().to("https://www.google.com/");  
+	          
+	    // Click on the search text box and send value  
+	    driver.findElement(By.name("q")).sendKeys("javatpoint tutorial");  
+	          
+	    // Click on the search button  
+	    driver.findElement(By.name("btnK")).click();  
+	      
+		}
+	
+}
