@@ -43,34 +43,12 @@ public class Selenium {
         }
         
         
-
-        // Scroll down using JavascriptExecutor
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 500)");
-
-        // Wait for 2 seconds
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Scroll up using JavascriptExecutor
-        js.executeScript("window.scrollBy(0, -500)");
-
-        // Wait for 2 seconds
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        
         
 
         // Scroll to the logout button
         WebElement logoutButton = driver.findElement(By.xpath("//a[@class='last']"));
         scrollToElement(driver, logoutButton);
-
+//
         // Wait for 2 seconds (you may need to enhance this wait)
         try {
             Thread.sleep(2000);
