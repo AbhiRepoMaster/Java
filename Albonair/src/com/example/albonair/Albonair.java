@@ -94,7 +94,23 @@ public class Albonair {
         driver.findElement(By.name("work_for_phone")).sendKeys("1234567890");
         driver.findElement(By.name("work_for_email")).sendKeys("test@example.com");
         driver.findElement(By.name("work_for_message")).sendKeys("This is a test message");
+     // Find the file input element
+        WebElement fileInput = driver.findElement(By.cssSelector("input[type='file']"));
+
+        // Enter the file path to upload
+        fileInput.sendKeys("C:\\Users\\19048\\Documents\\vb.docx");
+
+        // Wait for the file to upload (you may need to enhance this wait)
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        
         driver.findElement(By.name("work_for_acceptance")).click(); // Check the agreement checkbox
+        
+        
 
         // Scroll to the send button
         WebElement sendButton = driver.findElement(By.cssSelector("button[type='submit']"));
