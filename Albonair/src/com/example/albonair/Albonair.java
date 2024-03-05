@@ -110,7 +110,17 @@ public class Albonair {
         
         driver.findElement(By.name("work_for_acceptance")).click(); // Check the agreement checkbox
         
-        
+     // Switch to the iframe containing the reCAPTCHA checkbox
+        WebElement iframe = driver.findElement(By.xpath("//iframe[contains(@title, 'recaptcha')]"));
+        driver.switchTo().frame(iframe);
+
+        // Find and click on the reCAPTCHA checkbox label
+        WebElement checkboxLabel = driver.findElement(By.xpath("//div[@class='recaptcha-checkbox-border']"));
+        checkboxLabel.click();
+
+        // Switch back to the default content
+        driver.switchTo().defaultContent();
+
 
         // Scroll to the send button
         WebElement sendButton = driver.findElement(By.cssSelector("button[type='submit']"));
