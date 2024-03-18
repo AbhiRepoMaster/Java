@@ -16,17 +16,14 @@ public class Albonair {
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
-        // Launch website link
         driver.navigate().to("http://10.17.1.139/sites/albonair/");
 
-        // Wait for the login page to load (you may need to enhance this wait)
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // Array of header links
         String[] headerLinks = {
                 "About us",
                 "Product",
@@ -36,19 +33,15 @@ public class Albonair {
                 "Contact us"
         };
 
-        // Iterate over each header link
         for (String linkText : headerLinks) {
-            // Navigate to the link
             driver.navigate().to(getLinkURL(linkText));
 
-            // Wait for the page to load (you may need to enhance this wait)
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            // Verify if the current URL matches the expected URL
             String currentUrl = driver.getCurrentUrl();
             if (currentUrl.equals(getLinkURL(linkText))) {
                 System.out.println("Link click behavior for '" + linkText + "' passed");
@@ -57,23 +50,16 @@ public class Albonair {
             }
         }
 
-        // Find the search input field in the header using its ID
         WebElement searchInput = driver.findElement(By.id("search"));
-
-        // Enter the search query "Employee"
         searchInput.sendKeys("Employee");
-
-        // Find the search button and click on it
         searchInput.sendKeys(Keys.RETURN);
 
-        // Wait for the search results to load (you may need to enhance this wait)
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // Verify if the search results contain the expected text
         WebElement searchResults = driver.findElement(By.cssSelector(".search-results"));
         String searchResultsText = searchResults.getText();
         if (searchResultsText.contains("Employee")) {
@@ -82,58 +68,43 @@ public class Albonair {
             System.out.println("Search behavior for 'Employee' failed");
         }
 
-        // Navigate to the contact us page
         driver.navigate().to("http://10.17.1.139/sites/albonair/contact_us/");
 
-        // Auto-select Salutation from dropdown
         WebElement salutationDropdown = driver.findElement(By.name("work_for_salutation"));
         salutationDropdown.sendKeys("Mr");
 
-        // Fill out the rest of the form
         driver.findElement(By.name("work_for_name")).sendKeys("Test");
         driver.findElement(By.name("work_for_phone")).sendKeys("1234567890");
         driver.findElement(By.name("work_for_email")).sendKeys("test@example.com");
         driver.findElement(By.name("work_for_message")).sendKeys("This is a test message");
-     // Find the file input element
-        WebElement fileInput = driver.findElement(By.cssSelector("input[type='file']"));
 
-        // Enter the file path to upload
+        WebElement fileInput = driver.findElement(By.cssSelector("input[type='file']"));
         fileInput.sendKeys("C:\\Users\\19048\\Documents\\vb.docx");
 
-        // Wait for the file to upload (you may need to enhance this wait)
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        
-        driver.findElement(By.name("work_for_acceptance")).click(); // Check the agreement checkbox
-        
-     // Switch to the iframe containing the reCAPTCHA checkbox
+        driver.findElement(By.name("work_for_acceptance")).click();
+
         WebElement iframe = driver.findElement(By.xpath("//iframe[contains(@title, 'recaptcha')]"));
         driver.switchTo().frame(iframe);
 
-        // Find and click on the reCAPTCHA checkbox label
         WebElement checkboxLabel = driver.findElement(By.xpath("//div[@class='recaptcha-checkbox-border']"));
         checkboxLabel.click();
 
-        // Switch back to the default content
         driver.switchTo().defaultContent();
 
-
-        // Scroll to the send button
         WebElement sendButton = driver.findElement(By.cssSelector("button[type='submit']"));
         scrollToElement(driver, sendButton);
 
-        // Click the send button
         sendButton.click();
 
-        // Wait for the form to submit
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".wpcf7-mail-sent-ok")));
 
-        // Verify if the form was submitted successfully
         WebElement successMessage = driver.findElement(By.cssSelector(".wpcf7-mail-sent-ok"));
         if (successMessage.getText().contains("Your message has been sent successfully")) {
             System.out.println("Contact form submission successful");
@@ -141,7 +112,6 @@ public class Albonair {
             System.out.println("Contact form submission failed");
         }
 
-        // Close the browser
         driver.quit();
     }
 
