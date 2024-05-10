@@ -7,13 +7,9 @@
         <methods>
           <include name="TestResult"/>
           <include name="getReportInstance"/>
-          <include name="timesheetSave"/>
-          <include name="clickOnTimesheetEntry"/>
           <include name="stoprec"/>
           <include name="screenrecord"/>
-          <include name="login"/>
           <include name="launchURL"/>
-          <include name="enterTimesheet"/>
         </methods>
       </class> <!-- com.TimesheetDemo.TestCases.FillInTimesheet -->
     </classes>

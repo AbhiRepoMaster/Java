@@ -1,20 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-09T17:37:07 IST" name="Default suite" finished-at="2024-05-09T17:37:11 IST" duration-ms="4319">
+  <suite started-at="2024-05-10T15:30:19 IST" name="Default suite" finished-at="2024-05-10T15:31:10 IST" duration-ms="51170">
     <groups>
     </groups>
-    <test started-at="2024-05-09T17:37:07 IST" name="Default test" finished-at="2024-05-09T17:37:11 IST" duration-ms="4319">
+    <test started-at="2024-05-10T15:30:19 IST" name="Default test" finished-at="2024-05-10T15:31:10 IST" duration-ms="51170">
       <class name="com.example.bookacar.testcases.BookACarForm">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@23c30a20]" started-at="2024-05-09T17:37:07 IST" name="setUp" finished-at="2024-05-09T17:37:10 IST" duration-ms="2914" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:19 IST" name="setUp" finished-at="2024-05-10T15:30:21 IST" duration-ms="2751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRedirectToWebsite()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@23c30a20]" started-at="2024-05-09T17:37:10 IST" name="testRedirectToWebsite" finished-at="2024-05-09T17:37:11 IST" duration-ms="1346" status="PASS">
+        <test-method signature="testRedirectToWebsite()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:21 IST" name="testRedirectToWebsite" finished-at="2024-05-10T15:30:23 IST" duration-ms="1537" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRedirectToWebsite -->
+        <test-method signature="clickOnModel()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:23 IST" name="clickOnModel" finished-at="2024-05-10T15:30:28 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.testRedirectToWebsite" duration-ms="5353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnModel -->
+        <test-method signature="clickOnFuelType()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:28 IST" name="clickOnFuelType" finished-at="2024-05-10T15:30:34 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.clickOnModel" duration-ms="5181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnFuelType -->
+        <test-method signature="selectVariant()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:34 IST" name="selectVariant" finished-at="2024-05-10T15:30:39 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.clickOnFuelType" duration-ms="5217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectVariant -->
+        <test-method signature="selectExteriorColor()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:39 IST" name="selectExteriorColor" finished-at="2024-05-10T15:30:44 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.selectVariant" duration-ms="5208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectExteriorColor -->
+        <test-method signature="selectInteriorColor()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:44 IST" name="selectInteriorColor" finished-at="2024-05-10T15:30:49 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.selectExteriorColor" duration-ms="5186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectInteriorColor -->
+        <test-method signature="selectDealerState()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:49 IST" name="selectDealerState" finished-at="2024-05-10T15:30:54 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.selectInteriorColor" duration-ms="5202" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectDealerState -->
+        <test-method signature="selectDealerCity()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:30:54 IST" name="selectDealerCity" finished-at="2024-05-10T15:31:00 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.selectDealerState" duration-ms="5169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectDealerCity -->
+        <test-method signature="selectDealerName()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:31:00 IST" name="selectDealerName" finished-at="2024-05-10T15:31:05 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.selectDealerCity" duration-ms="5173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectDealerName -->
+        <test-method signature="clickProceedButton()[pri:0, instance:com.example.bookacar.testcases.BookACarForm@4310d43]" started-at="2024-05-10T15:31:05 IST" name="clickProceedButton" finished-at="2024-05-10T15:31:10 IST" depends-on-methods="com.example.bookacar.testcases.BookACarForm.selectDealerName" duration-ms="5111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickProceedButton -->
       </class> <!-- com.example.bookacar.testcases.BookACarForm -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
