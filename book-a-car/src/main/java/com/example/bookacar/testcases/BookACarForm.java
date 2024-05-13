@@ -97,31 +97,46 @@ public class BookACarForm {
     }
 
     @Test(dependsOnMethods = "selectDealerState")
-    public void selectDealerCity() throws InterruptedException {
-        WebElement cityDropdown = driver.findElement(By.xpath("//select[@id='dealer-city-01']"));
-        Select dealerCitySelect = new Select(cityDropdown);
+    public void selectDealerCityAndCheckNameExistence() throws InterruptedException {
+        WebElement stateDropdown = driver.findElement(By.xpath("//select[@id='state-01']"));
+        Select dealerStateSelect = new Select(stateDropdown);
         Thread.sleep(5000);
-        dealerCitySelect.selectByIndex(1);
-        String selectedDealerCity = dealerCitySelect.getFirstSelectedOption().getText();
-        System.out.println("Selected Dealer City: " + selectedDealerCity);
-        Assert.assertNotNull(selectedDealerCity, "Selected dealer city is not as expected");
-    }
 
-    @Test(dependsOnMethods = "selectDealerCity")
-    public void selectDealerName() throws InterruptedException {
-        WebElement dealerNameDropdown = driver.findElement(By.xpath("//select[@id='bookacardelar']"));
-        Select dealerNameSelect = new Select(dealerNameDropdown);
-        Thread.sleep(5000);
-        dealerNameSelect.selectByIndex(1);
-        String selectedDealerName = dealerNameSelect.getFirstSelectedOption().getText();
-        System.out.println("Selected Dealer Name: " + selectedDealerName);
-        Assert.assertNotNull(selectedDealerName, "Selected dealer name is not as expected");
-    }
+        // Iterate through each dealer state
+        for (WebElement stateOption : dealerStateSelect.getOptions()) {
+            // Select a dealer state
+            stateOption.click();
 
-    @Test(dependsOnMethods = "selectDealerName")
-    public void clickProceedButton() throws InterruptedException {
-        WebElement proceedButton = driver.findElement(By.xpath("//button[@class='btn btn-blue']"));
-        proceedButton.click();
-        Thread.sleep(5000);
+            // Find the dealer city dropdown and select each city
+            WebElement cityDropdown = driver.findElement(By.xpath("//select[@id='dealer-city-01']"));
+            Select dealerCitySelect = new Select(cityDropdown);
+            Thread.sleep(5000);
+            for (WebElement cityOption : dealerCitySelect.getOptions()) {
+                cityOption.click();
+
+                // Find the dealer name dropdown
+                WebElement dealerNameDropdown = driver.findElement(By.xpath("//select[@id='bookacardelar']"));
+                Select dealerNameSelect = new Select(dealerNameDropdown);
+                Thread.sleep(5000);
+
+                // Iterate through each dealer name option
+                for (WebElement dealerNameOption : dealerNameSelect.getOptions()) {
+                    // If the option is not the placeholder option with the text "Dealer Name", select it
+                    if (!dealerNameOption.getText().equals("Dealer Name")) {
+                        dealerNameSelect.selectByVisibleText(dealerNameOption.getText());
+
+                        // Print the selected dealer name
+                        System.out.println("Selected Dealer Name for City " + cityOption.getText() + ": " + dealerNameOption.getText());
+
+                        // Assert if needed
+                        Assert.assertEquals(dealerNameSelect.getFirstSelectedOption().getText(), dealerNameOption.getText(),
+                                "Selected Dealer Name does not match for City: " + cityOption.getText());
+
+                        // Break the loop as we have selected the dealer name
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

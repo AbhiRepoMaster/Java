@@ -5,17 +5,15 @@
     <classes>
       <class name="com.example.bookacar.testcases.BookACarForm">
         <methods>
-          <include name="clickProceedButton"/>
           <include name="setUp"/>
           <include name="selectInteriorColor"/>
+          <include name="selectDealerCityAndCheckNameExistence"/>
           <include name="selectDealerState"/>
           <include name="clickOnModel"/>
-          <include name="selectDealerCity"/>
           <include name="testRedirectToWebsite"/>
           <include name="selectExteriorColor"/>
           <include name="clickOnFuelType"/>
           <include name="selectVariant"/>
-          <include name="selectDealerName"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.BookACarForm -->
     </classes>
