@@ -3,19 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.bookacar.testcases.BookACarForm">
+      <class name="com.example.bookacar.testcases.TestLeaf">
         <methods>
           <include name="setUp"/>
-          <include name="selectInteriorColor"/>
-          <include name="selectDealerCityAndCheckNameExistence"/>
-          <include name="selectDealerState"/>
-          <include name="clickOnModel"/>
-          <include name="testRedirectToWebsite"/>
-          <include name="selectExteriorColor"/>
-          <include name="clickOnFuelType"/>
-          <include name="selectVariant"/>
+          <include name="testEnterKeyPress"/>
         </methods>
-      </class> <!-- com.example.bookacar.testcases.BookACarForm -->
+      </class> <!-- com.example.bookacar.testcases.TestLeaf -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
