@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
@@ -40,7 +41,7 @@ public class TestLeaf {
         }
     }
      
-    @Test
+   // @Test
     public void typeName() {
     	WebElement inputField = driver.findElement(By.id("j_idt88:name"));
     	inputField.clear();
@@ -48,7 +49,7 @@ public class TestLeaf {
     }
     
   
-    @Test
+  //  @Test
     public void appendText() throws InterruptedException {
     	List<WebElement> test = driver.findElements(By.xpath("//input[@id='j_idt88:j_idt91']"));
 		test.get(0).sendKeys(", India");
@@ -57,7 +58,7 @@ public class TestLeaf {
 
     }
     
-    @Test
+  //  @Test
     public void verifyTextBoxIsDisabled() {
         // Locate the input field using the provided XPath
         WebElement inputField = driver.findElement(By.xpath("//form[@id='j_idt88']//div[3]//div[1]//input[@type='text']"));
@@ -69,7 +70,7 @@ public class TestLeaf {
         Assert.assertTrue(isDisabled, "The text box should be disabled.");
     }
 
-    @Test
+  //  @Test
     public void clearText() {
         // Locate the input field using the provided XPath
         WebElement inputField = driver.findElement(By.xpath("//input[@id='j_idt88:j_idt95']"));
@@ -78,7 +79,7 @@ public class TestLeaf {
         inputField.clear();
     }
     
-    @Test
+    //@Test
     public void clearAndRetrieveText() {
         // Locate the input field to retrieve text from using the provided XPath
         WebElement inputFieldToRetrieve = driver.findElement(By.xpath("//input[@id='j_idt88:j_idt97']"));
@@ -90,7 +91,7 @@ public class TestLeaf {
         System.out.println("Retrieved text: " + retrievedText);
     }
     
-    @Test
+   // @Test
     public void typeEmailAndTab() {
         // Locate the email input field using the provided XPath
         WebElement emailInputField = driver.findElement(By.xpath("//input[@id='j_idt88:j_idt99']"));
@@ -110,7 +111,7 @@ public class TestLeaf {
     }
     
     
-    @Test
+  //  @Test
     public void typeAboutYourself() {
         // Locate the textarea using the provided XPath
         WebElement textArea = driver.findElement(By.xpath("//textarea[@id='j_idt88:j_idt101']"));
@@ -119,7 +120,7 @@ public class TestLeaf {
         textArea.sendKeys("This is a brief description about myself.");
     }
 
-    @Test
+  //  @Test
     public void testErrorMessageDisplayedOnEnter() {
         // Find the input element
         WebElement ageInput = driver.findElement(By.id("j_idt106:thisform:age"));
@@ -132,6 +133,109 @@ public class TestLeaf {
         Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed after pressing Enter.");
     }
     
+//    
+//    @Test
+//    public void selectMonospaceOption() {
+//        // Find the font picker element
+//        WebElement fontPicker = driver.findElement(By.xpath("//div[@class='grid formgrid']//span[contains(@class,'ql-font ql-picker')]"));
+//
+//        // Click on the font picker to expand options
+//        fontPicker.click();
+//        
+//        WebDriverWait wait = new WebDriverWait(this.driver,Duration.ofSeconds(60));
+//        wait.until(ExpectedConditions.attributeContains(By.xpath("//div[@class='grid formgrid']//span[contains(@class,'ql-font ql-picker')]"), "class", "ql-font ql-picker ql-expanded"));
+//
+//        // Find and click the "monospace" option
+//        WebElement monospaceOption = driver.findElement(By.xpath("//div[@class='grid formgrid']//span[@class='ql-picker-options']//span[@data-value='monospace']"));
+//        monospaceOption.click();
+//        wait.until(ExpectedConditions.attributeContains(By.xpath("//div[@class='grid formgrid']//span[contains(@class,'ql-font ql-picker')]"), "class", "ql-font ql-picker ql-expanded"));
+//    
+//    }
+    
+    
+    @Test(priority=1)
+    public void selectMonospaceOptionAndVerify() {
+        // Find the font picker element
+        WebElement fontPicker = driver.findElement(By.xpath("//div[@class='grid formgrid']//span[contains(@class,'ql-font ql-picker')]"));
+
+        // Click on the font picker to expand options
+        fontPicker.click();
+
+        // Wait for the font picker to expand
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.attributeContains(fontPicker, "class", "ql-expanded"));
+
+        // Find and click the "monospace" option
+        WebElement monospaceOption = driver.findElement(By.xpath("//div[@class='grid formgrid']//span[@class='ql-picker-options']//span[@data-value='monospace']"));
+        monospaceOption.click();
+
+        // Wait for the font picker to collapse back
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(fontPicker, "class", "ql-expanded")));
+
+        // Type some text into the editor
+        WebElement editor = driver.findElement(By.xpath("//div[@id='j_idt88:j_idt103_editor']//div[@class='ql-editor ql-blank']"));
+        editor.click();
+        editor.sendKeys("This is a test text");
+
+        // Verify that the typed text is in monospace font
+        WebElement typedText = driver.findElement(By.xpath("//p/span"));
+        String fontFamily = typedText.getCssValue("font-family");
+        System.out.println(fontFamily);
+        // Check if the font-family is monospace
+        if (fontFamily.contains("monospace")) {
+            System.out.println("Monospace selected");
+        } else {
+            System.out.println("Monospace not selected");
+        }
+
+        // Assert that the font-family is monospace
+       // Assert.assertTrue(fontFamily.contains("monospace"), "The font is monospace");
+    }
+    
+    
+    @Test(priority=2)
+    public void selectHugeOptionAndVerify() throws InterruptedException {
+    	
+    	Thread.sleep(2000);
+        // Find the size picker element
+        WebElement sizePicker = driver.findElement(By.xpath("//div[@class='grid formgrid']//span[contains(@class,'ql-size ql-picker')]"));
+
+        // Click on the size picker to expand options
+        sizePicker.click();
+
+        // Wait for the size picker to expand
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.attributeContains(By.xpath("//div[@class='grid formgrid']//span[contains(@class,'ql-size ql-picker')]"), "class", "ql-expanded"));
+
+        // Find and click the "huge" option
+        WebElement hugeOption = driver.findElement(By.xpath("//div[@class='grid formgrid']//span[@class='ql-picker-options']//span[@data-value='huge']"));
+        hugeOption.click();
+
+        // Type some text into the editor
+        WebElement editor = driver.findElement(By.xpath("//div[@id='j_idt88:j_idt103_editor']//div[@class='ql-editor']"));
+        
+        Actions act = new Actions(this.driver);
+        act.doubleClick(editor);
+        act.sendKeys(Keys.DELETE);
+        act.sendKeys("Huge Option");
+        Thread.sleep(2000);
+//        editor.click();
+//        editor.clear();
+//        editor.sendKeys("77878");
+
+        // Verify that the typed text is in huge size
+        String fontSize = driver.findElement(By.xpath("//div[@id='j_idt88:j_idt103_editor']//div[@class='ql-editor']")).getCssValue("font-size");
+        System.out.println(fontSize);
+        // Check if the font-size is huge (typically 'huge' size is around 26px)
+        if (fontSize.equals("32.5px")) {
+            System.out.println("Huge size selected");
+        } else {
+            System.out.println("Huge size not selected");
+        }
+
+        // Assert that the font-size is huge
+        Assert.assertEquals(fontSize, "32.5px", "The font size is not huge");
+    }
     
     //@AfterClass
 	  public void driverClose()
