@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-20T17:59:19 IST" name="Default suite" finished-at="2024-05-20T17:59:35 IST" duration-ms="16411">
+  <suite started-at="2024-05-20T18:18:07 IST" name="Default suite" finished-at="2024-05-20T18:18:24 IST" duration-ms="16809">
     <groups>
     </groups>
-    <test started-at="2024-05-20T17:59:19 IST" name="Default test" finished-at="2024-05-20T17:59:35 IST" duration-ms="16411">
+    <test started-at="2024-05-20T18:18:07 IST" name="Default test" finished-at="2024-05-20T18:18:24 IST" duration-ms="16809">
       <class name="com.example.bookacar.testcases.TestLeaf">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.TestLeaf@26e356f0]" started-at="2024-05-20T17:59:19 IST" name="setUp" finished-at="2024-05-20T17:59:22 IST" duration-ms="3391" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.TestLeaf@47d9a273]" started-at="2024-05-20T18:18:07 IST" name="setUp" finished-at="2024-05-20T18:18:10 IST" duration-ms="2816" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRedirectToWebsite()[pri:0, instance:com.example.bookacar.testcases.TestLeaf@26e356f0]" started-at="2024-05-20T17:59:22 IST" name="testRedirectToWebsite" finished-at="2024-05-20T17:59:22 IST" duration-ms="28" status="PASS">
+        <test-method signature="testRedirectToWebsite()[pri:0, instance:com.example.bookacar.testcases.TestLeaf@47d9a273]" started-at="2024-05-20T18:18:10 IST" name="testRedirectToWebsite" finished-at="2024-05-20T18:18:11 IST" duration-ms="721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRedirectToWebsite -->
-        <test-method signature="selectMonospaceOptionAndVerify()[pri:1, instance:com.example.bookacar.testcases.TestLeaf@26e356f0]" started-at="2024-05-20T17:59:22 IST" name="selectMonospaceOptionAndVerify" finished-at="2024-05-20T17:59:23 IST" duration-ms="371" status="PASS">
+        <test-method signature="selectMonospaceOptionAndVerify()[pri:1, instance:com.example.bookacar.testcases.TestLeaf@47d9a273]" started-at="2024-05-20T18:18:11 IST" name="selectMonospaceOptionAndVerify" finished-at="2024-05-20T18:18:11 IST" duration-ms="344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectMonospaceOptionAndVerify -->
-        <test-method signature="typeNumberAndConfirmSliderMoves()[pri:7, instance:com.example.bookacar.testcases.TestLeaf@26e356f0]" started-at="2024-05-20T17:59:23 IST" name="typeNumberAndConfirmSliderMoves" finished-at="2024-05-20T17:59:24 IST" duration-ms="1181" status="PASS">
+        <test-method signature="typeNumberAndConfirmSliderMoves()[pri:7, instance:com.example.bookacar.testcases.TestLeaf@47d9a273]" started-at="2024-05-20T18:18:11 IST" name="typeNumberAndConfirmSliderMoves" finished-at="2024-05-20T18:18:13 IST" duration-ms="1193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- typeNumberAndConfirmSliderMoves -->
-        <test-method signature="clickAndConfirmKeyboardAppears()[pri:8, instance:com.example.bookacar.testcases.TestLeaf@26e356f0]" started-at="2024-05-20T17:59:24 IST" name="clickAndConfirmKeyboardAppears" finished-at="2024-05-20T17:59:35 IST" duration-ms="11365" status="FAIL">
+        <test-method signature="clickAndConfirmKeyboardAppears()[pri:8, instance:com.example.bookacar.testcases.TestLeaf@47d9a273]" started-at="2024-05-20T18:18:13 IST" name="clickAndConfirmKeyboardAppears" finished-at="2024-05-20T18:18:24 IST" duration-ms="11401" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Test failed due to an exception: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@class, 'ui-keyboard')] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.17.0', revision: 'e52b1be057*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\19048\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51208/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 394650894a1b530cc398589523e354be]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\19048\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52042}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52042/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d3d74a66f48a3ad8a86e1bc9e134317]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: Test failed due to an exception: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@class, 'ui-keyboard')] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.17.0', revision: 'e52b1be057*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\19048\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51208/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 394650894a1b530cc398589523e354be
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\19048\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52042}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52042/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d3d74a66f48a3ad8a86e1bc9e134317
 at org.testng.Assert.fail(Assert.java:99)
 at com.example.bookacar.testcases.TestLeaf.clickAndConfirmKeyboardAppears(TestLeaf.java:466)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -76,6 +76,10 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickAndConfirmKeyboardAppears -->
+        <test-method is-config="true" signature="driverClose()[pri:0, instance:com.example.bookacar.testcases.TestLeaf@47d9a273]" started-at="2024-05-20T18:18:24 IST" name="driverClose" finished-at="2024-05-20T18:18:24 IST" duration-ms="266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverClose -->
       </class> <!-- com.example.bookacar.testcases.TestLeaf -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -446,10 +446,10 @@ public class TestLeaf {
 
             // Simulate pressing a key to trigger the on-screen keyboard
             Actions actions = new Actions(driver);
-            actions.sendKeys(inputField, "A").perform();  // Sends a key press to the input field
+            actions.sendKeys(inputField, "A").perform(); 
 
             // Add a short wait to ensure the keyboard appears
-            Thread.sleep(1000); // Adjust if necessary based on your application's response time
+            Thread.sleep(1000);
 
             // Locate the on-screen keyboard element (adjust the locator as needed)
             // This is a placeholder; replace it with the actual locator of your on-screen keyboard
@@ -467,8 +467,8 @@ public class TestLeaf {
         }
     }
     
-    
-    //@AfterClass
+
+    @AfterClass
 	  public void driverClose()
 	  {
 		  driver.quit();
