@@ -430,10 +430,43 @@ public class TestLeaf {
         }
     }
 
+    @Test(priority = 8)
+    public void clickAndConfirmKeyboardAppears() {
+        // Wait for the page to load
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        try {
+            // Locate the input field
+            WebElement inputField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("j_idt106:j_idt122")));
+            System.out.println("Input field found.");
+
+            // Click on the input field to trigger the on-screen keyboard
+            inputField.click();
+            System.out.println("Clicked on the input field.");
+
+            // Simulate pressing a key to trigger the on-screen keyboard
+            Actions actions = new Actions(driver);
+            actions.sendKeys(inputField, "A").perform();  // Sends a key press to the input field
+
+            // Add a short wait to ensure the keyboard appears
+            Thread.sleep(1000); // Adjust if necessary based on your application's response time
+
+            // Locate the on-screen keyboard element (adjust the locator as needed)
+            // This is a placeholder; replace it with the actual locator of your on-screen keyboard
+            WebElement keyboardElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'ui-keyboard')]")));
+            System.out.println("On-screen keyboard element found.");
+
+            // Verify that the keyboard element is displayed
+            Assert.assertTrue(keyboardElement.isDisplayed(), "The on-screen keyboard did not appear.");
+
+            System.out.println("On-screen keyboard confirmed successfully.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Test failed due to an exception: " + e.getMessage());
+        }
+    }
     
-    
-    
-   
     
     //@AfterClass
 	  public void driverClose()

@@ -6,7 +6,7 @@
       <class name="com.example.bookacar.testcases.TestLeaf">
         <methods>
           <include name="setUp"/>
-          <include name="typeNumberAndConfirmSliderMoves"/>
+          <include name="clickAndConfirmKeyboardAppears"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.TestLeaf -->
     </classes>
