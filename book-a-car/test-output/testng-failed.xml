@@ -5,8 +5,8 @@
     <classes>
       <class name="com.example.bookacar.testcases.TestLeaf">
         <methods>
-          <include name="selectHugeOptionAndVerify"/>
           <include name="setUp"/>
+          <include name="typeNumberAndConfirmSliderMoves"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.TestLeaf -->
     </classes>
