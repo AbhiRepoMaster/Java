@@ -138,36 +138,23 @@ public class Checkbox {
 
     @Test
     public void testSelectMultipleOptions() {
-        // Click on the dropdown arrow to open the multiselect dropdown
-        WebElement dropdownArrow = driver.findElement(By.cssSelector(".ui-selectcheckboxmenu-trigger"));
-        dropdownArrow.click();
+        // Click on the component that triggers the appearance of the multiselect box
+        WebElement multiselectBox = driver.findElement(By.xpath("//ul[@data-label='Cities']"));
+        multiselectBox.click();
 
-        // Wait for the checkboxes to appear
+        // Wait for the multiselect box items to appear
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-selectcheckboxmenu-panel")));
+        WebElement multiselectBoxPanel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-selectcheckboxmenu-items-wrapper")));
 
-        // Find all option elements
-        List<WebElement> optionElements = driver.findElements(By.cssSelector("#j_idt87\\:multiple input[type='checkbox']"));
+        // Find the checkboxes for "London" and "Paris" and select them
+        WebElement londonCheckbox = multiselectBoxPanel.findElement(By.xpath("//label[text()='London']/preceding-sibling::div/input[@type='checkbox']"));
+        WebElement parisCheckbox = multiselectBoxPanel.findElement(By.xpath("//label[text()='Paris']/preceding-sibling::div/input[@type='checkbox']"));
+        londonCheckbox.click();
+        parisCheckbox.click();
 
-        // Define the options to select
-        String[] optionsToSelect = {"London", "Paris"};
-
-        // Iterate over the option elements and select the desired options
-        for (WebElement optionElement : optionElements) {
-            String optionText = optionElement.getAttribute("value");
-            for (String option : optionsToSelect) {
-                if (optionText.equalsIgnoreCase(option)) {
-                    // Click on the checkbox if the option matches London or Paris
-                    optionElement.click();
-                }
-            }
-        }
-
-        // Verify that London and Paris options are selected
-        for (String option : optionsToSelect) {
-            WebElement checkbox = driver.findElement(By.cssSelector("#j_idt87\\:multiple input[type='checkbox'][value='" + option + "']"));
-            Assert.assertTrue(checkbox.isSelected(), option + " option is not selected");
-        }
+        // Verify that "London" and "Paris" checkboxes are selected
+        Assert.assertTrue(londonCheckbox.isSelected(), "London checkbox is not selected");
+        Assert.assertTrue(parisCheckbox.isSelected(), "Paris checkbox is not selected");
     }
 
 
