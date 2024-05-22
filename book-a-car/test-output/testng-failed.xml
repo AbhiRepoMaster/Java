@@ -5,9 +5,8 @@
     <classes>
       <class name="com.example.bookacar.testcases.Checkbox">
         <methods>
-          <include name="Notification"/>
+          <include name="testSelectMultipleOptions"/>
           <include name="setUp"/>
-          <include name="driverClose"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.Checkbox -->
     </classes>
