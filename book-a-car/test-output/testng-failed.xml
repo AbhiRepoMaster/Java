@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.bookacar.testcases.Select">
+      <class name="com.example.bookacar.testcases.Checkbox">
         <methods>
-          <include name="selectEnglishLanguage"/>
+          <include name="Notification"/>
           <include name="setUp"/>
-          <include name="selectTwoValue"/>
           <include name="driverClose"/>
         </methods>
-      </class> <!-- com.example.bookacar.testcases.Select -->
+      </class> <!-- com.example.bookacar.testcases.Checkbox -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
