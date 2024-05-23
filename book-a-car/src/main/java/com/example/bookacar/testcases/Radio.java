@@ -37,10 +37,158 @@ public class Radio {
 
     }
 	
+	//@Test (priority = 1)
+	public void favoriteBrowserRadioButton() {
+	    WebElement FirefoxRadioButton =
+	    		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Firefox']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]"))); //explicit wait
+	    FirefoxRadioButton.click();
+	    WebElement selectedState = 
+	    		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Firefox']/preceding-sibling::div/div[contains(@class, 'ui-state-active')]")));
+	    Assert.assertNotNull(selectedState, "Firefox radio button is not selected"); 
+	}
 	
+	//@Test (priority = 1)
+	public void testSelectSafariRadioButton() {
+	    WebElement safariRadioButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Safari']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]")));
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(safariRadioButton).click().perform();
+	    WebElement selectedState = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Safari']/preceding-sibling::div/div[contains(@class, 'ui-state-active')]")));
+	    Assert.assertNotNull(selectedState, "Safari radio button is not selected");
+	}
+	
+	// @Test(priority = 2)
+	    public void testUnselectRadioButton() {
+	        // Locate the radio button element using the given XPath
+	        WebElement radioButton = driver.findElement(By.xpath("//label[text()='Bengaluru']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]"));
+
+	        // Check if the radio button is selected initially
+	        boolean isRadioButtonSelectedInitially = radioButton.isSelected();
+
+	        // Select the radio button (if not already selected)
+	        if (!isRadioButtonSelectedInitially) {
+	            radioButton.click();
+	        }
+
+	        // Attempt to deselect the radio button
+	        radioButton.click();
+
+	        // Check if the radio button is still selected after attempting to deselect it
+	        boolean isRadioButtonSelectedAfterDeselect = radioButton.isSelected();
+
+	        // Assert that the radio button is not selected after attempting to deselect it
+	        Assert.assertFalse(isRadioButtonSelectedAfterDeselect, "Radio button is still selected after attempting to deselect it");
+	    }
+		
+	    
+//	    @Test(priority = 2)
+//	    public void testUnselectRadioButton1() {
+//	        WebElement radioButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Bengaluru']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]")));
+//
+//	        // Select the radio button if it's not already selected
+//	        if (!radioButton.isSelected()) {
+//	            radioButton.click();
+//	        }
+//
+//	        // Wait for 5 seconds
+//	        try {
+//	            Thread.sleep(5000);
+//	        } catch (InterruptedException e) {
+//	            e.printStackTrace();
+//	        }
+//
+//	        // Unselect the radio button
+//	        radioButton.click();
+//
+//	        // Check if the radio button is unselected
+//	        boolean isRadioButtonSelected = radioButton.isSelected();
+//	        Assert.assertFalse(isRadioButtonSelected, "Radio button is still selected after attempting to deselect it");
+//	    }
+
+	    
+	 //   @Test(priority = 2)
+	    public void testUnselectRadioButton1() {
+	        WebElement radioButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Bengaluru']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]")));
+
+	        // Select the radio button if it's not already selected
+	        if (!radioButton.isSelected()) {
+	            radioButton.click();
+	            System.out.println("Selected");
+	        } else {
+	            System.out.println("Already selected");
+	        }
+
+	        // Wait for 5 seconds
+	        try {
+	            Thread.sleep(5000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+
+	        // Unselect the radio button if it's selected
+	        if (radioButton.isSelected()) {
+	            radioButton.click();
+	            System.out.println("Unselected");
+	        } else {
+	            System.out.println("Already unselected");
+	        }
+
+	        // Check if the radio button is unselected
+	        boolean isRadioButtonSelected = radioButton.isSelected();
+	        Assert.assertFalse(isRadioButtonSelected, "Radio button is still selected after attempting to deselect it");
+	    }
 
 
-//@AfterClass
+	 //   @Test
+	    public void testDefaultSelectedRadioButton() {
+	        // Find all radio buttons
+	        List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@type='radio']"));
+
+	        WebElement defaultSelectedRadioButton = null;
+
+	        // Iterate through radio buttons
+	        for (WebElement radioButton : radioButtons) {
+	            // Check if the radio button is selected
+	            if (radioButton.isSelected()) {
+	                defaultSelectedRadioButton = radioButton;
+	                break;
+	            }
+	        }
+
+	        // If a default selected radio button is found, print its ID
+	        if (defaultSelectedRadioButton != null) {
+	            System.out.println("Default selected radio button: " + defaultSelectedRadioButton.getAttribute("id"));
+	        } else {
+	            // If no default selected radio button is found, print a message
+	            System.out.println("No radio button is selected by default.");
+	        }
+
+	        // Assert if any radio button is selected by default
+	        Assert.assertNotNull(defaultSelectedRadioButton, "No radio button is selected by default.");
+	    }
+	    
+//need work on it
+//	    @Test
+//	    public void testSelectAgeGroup() {
+//	        // Find all radio buttons for age group
+//	        List<WebElement> radioButtons = driver.findElements(By.xpath("//div[@id='j_idt87:age']//input[@type='radio']"));
+//
+//	        // Iterate through radio buttons
+//	        for (WebElement radioButton : radioButtons) {
+//	            // Wait for the radio button to be clickable
+//	            wait.until(ExpectedConditions.elementToBeClickable(radioButton));
+//	            
+//	            // Check if the radio button is not selected
+//	            if (!radioButton.isSelected()) {
+//	                // Select the radio button
+//	                radioButton.click();
+//	                System.out.println("Selected age group: " + radioButton.getAttribute("value"));
+//	            }
+//	        }
+//	    }
+	    
+	    
+	    
+	@AfterClass
    public void driverClose()
   {
 	  driver.quit();

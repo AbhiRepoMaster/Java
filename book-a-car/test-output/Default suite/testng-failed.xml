@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.bookacar.testcases.Checkbox">
+      <class name="com.example.bookacar.testcases.Radio">
         <methods>
-          <include name="CheckboxNotificationCheck"/>
           <include name="setUp"/>
+          <include name="driverClose"/>
+          <include name="testSelectAgeGroup"/>
         </methods>
-      </class> <!-- com.example.bookacar.testcases.Checkbox -->
+      </class> <!-- com.example.bookacar.testcases.Radio -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
