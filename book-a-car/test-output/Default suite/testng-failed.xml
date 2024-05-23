@@ -5,7 +5,7 @@
     <classes>
       <class name="com.example.bookacar.testcases.Checkbox">
         <methods>
-          <include name="testSelectMultipleOptions"/>
+          <include name="CheckboxNotificationCheck"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.Checkbox -->

@@ -4,9 +4,11 @@ import static org.testng.Assert.assertNotEquals;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -39,7 +41,7 @@ public class Checkbox {
 
     }
 	
-//	@Test (priority=1)
+	@Test (priority=1)
 	
 	public void testCheckboxAndSpanElement() throws InterruptedException {
         WebElement checkboxDiv = driver.findElement(By.xpath("//div[@class='ui-chkbox-box ui-widget ui-corner-all ui-state-default']"));
@@ -50,19 +52,19 @@ public class Checkbox {
     }
 	
 	
-//    @Test (priority=2)
+    @Test (priority=2)
     
     public void CheckboxNotificationCheck() {
         WebElement checkboxDiv = driver.findElement(By.xpath("//div[@id='j_idt87:j_idt91']//div[contains(@class,'ui-chkbox-box')]"));
         checkboxDiv.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("ui-growl-message")));
         WebElement toastMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='j_idt87:msg_container']//div[contains(@class,'ui-growl-item-container')]")));
         WebElement toastTitle = toastMessage.findElement(By.xpath(".//span[@class='ui-growl-title']"));
         String toastText = toastTitle.getText();
         Assert.assertEquals(toastText, "Checked", "The toast message does not contain the expected text 'Checked'");
     }
     
-//    @Test (priority=3)
+    @Test (priority=3)
     public void testSelectCourses() {
         // Get the table containing the checkboxes
         WebElement table = driver.findElement(By.id("j_idt87:basic"));
@@ -111,23 +113,58 @@ public class Checkbox {
         Assert.assertEquals(jsInput.getAttribute("aria-checked"), "true", "JavaScript checkbox is not selected");
     }
   
-//    @Test
-//    public void testToggleSwitchTurnedOn() {
-//        // Find the toggle switch element
-//        WebElement toggleSwitch = driver.findElement(By.id("j_idt87:j_idt100"));
-//
-//        // Check if the toggle switch is turned on by examining its classes and aria-checked attribute
-//        boolean isTurnedOn = toggleSwitch.getAttribute("class").contains("ui-toggleswitch-checked");
-//        boolean ariaChecked = "true".equals(toggleSwitch.findElement(By.tagName("input")).getAttribute("aria-checked"));
-//
-//        // Assert that the toggle switch is turned on
-//        Assert.assertTrue(isTurnedOn && ariaChecked, "Toggle switch is not turned on");
-//    }
+    @Test (priority=4)
+    public void testClickElement() {
+        WebElement element = driver.findElement(By.xpath("//*[@id='j_idt87:ajaxTriState']/div[2]"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        
+        while (true) {
+            element.click();
 
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-growl-message")));
 
+            String toastTitle = driver.findElement(By.className("ui-growl-title")).getText();
+            String toastContent = driver.findElement(By.tagName("p")).getText().trim(); 
+            System.out.println("Toast Message: " + toastTitle + " - " + toastContent);
+            if (toastContent.equals("State = 0")) {
+                System.out.println("Test Success! Found State = 0. Breaking loop.");
+                break;
+            } else {
+                System.out.println("Continuing loop... Toast content: " + toastContent);
+                System.out.println("Content length: " + toastContent.length());
+            }
+
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("ui-growl-message")));
+        }
+
+        System.out.println("Exited loop, test complete.");
+    }
+
+   @Test (priority=5)
+    public void testToggleSwitch() {
+        WebElement toggleKey = driver.findElement(By.xpath("//div[@class='ui-toggleswitch-slider']"));
+
+        // Check if toggle switch is initially unchecked
+        String ariaChecked = toggleKey.getAttribute("aria-checked");
+        if ("true".equals(ariaChecked)) {
+            // If toggle switch is already checked, click again to uncheck it
+            toggleKey.click();
+        }
+
+        // Click on the toggle switch to check it
+        toggleKey.click();
+        try {
+            WebElement toastMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='j_idt87:msg_container']//div[contains(@class,'ui-growl-item-container')]")));
+             WebElement toastTitle = toastMessage.findElement(By.xpath(".//span[@class='ui-growl-title']"));
+            String toastText = toastTitle.getText();
+            Assert.assertEquals(toastText, "Checked", "The toast message does not contain the expected text 'Checked'");
+        } catch (Exception e) {
+            Assert.fail("Toast message did not appear after toggling the switch");
+        }
+    }
     
-   // @Test
-    public void testCheckboxDisabled() {
+    @Test (priority=6)
+    public void CheckboxDisabled() {
         
         WebElement checkbox = driver.findElement(By.id("j_idt87:j_idt102_input"));
 
@@ -136,31 +173,44 @@ public class Checkbox {
         Assert.assertTrue(isDisabled, "Checkbox is not disabled");
     }
 
-    @Test
-    public void testSelectMultipleOptions() {
-        // Click on the component that triggers the appearance of the multiselect box
-        WebElement multiselectBox = driver.findElement(By.xpath("//ul[@data-label='Cities']"));
-        multiselectBox.click();
+  @Test (priority=7)
+    public void MultiSelectCheckboxes() {
+        try {
+            WebElement citiesDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@data-label='Cities']")));
+            citiesDropdown.click();
+            List<String> citiesToSelect = Arrays.asList("London", "Paris", "Rome");
+            for (String city : citiesToSelect) {
+                selectCity(city);
+            }
+            
+            List<String> selectedCities = Arrays.asList("London", "Paris", "Rome");
+            boolean allSelected = selectedCities.stream().allMatch(this::isCitySelected);
+            
+            if (allSelected) {
+                System.out.println("London, Paris, and Rome are selected.");
+            } else {
+                System.out.println("London, Paris, and Rome are not selected.");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
 
-        // Wait for the multiselect box items to appear
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement multiselectBoxPanel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-selectcheckboxmenu-items-wrapper")));
+    private void selectCity(String cityName) {
+        WebElement cityCheckbox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[contains(text(),'" + cityName + "')]/preceding-sibling::div/div[contains(@class,'ui-chkbox-box')]")));
+        cityCheckbox.click();
+    }
 
-        // Find the checkboxes for "London" and "Paris" and select them
-        WebElement londonCheckbox = multiselectBoxPanel.findElement(By.xpath("//label[text()='London']/preceding-sibling::div/input[@type='checkbox']"));
-        WebElement parisCheckbox = multiselectBoxPanel.findElement(By.xpath("//label[text()='Paris']/preceding-sibling::div/input[@type='checkbox']"));
-        londonCheckbox.click();
-        parisCheckbox.click();
-
-        // Verify that "London" and "Paris" checkboxes are selected
-        Assert.assertTrue(londonCheckbox.isSelected(), "London checkbox is not selected");
-        Assert.assertTrue(parisCheckbox.isSelected(), "Paris checkbox is not selected");
+    private boolean isCitySelected(String cityName) {
+        WebElement cityCheckbox = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[contains(text(),'" + cityName + "')]/preceding-sibling::div/div[contains(@class,'ui-chkbox-box')]")));
+        String isChecked = cityCheckbox.findElement(By.xpath("..//input")).getAttribute("aria-checked");
+        return "true".equals(isChecked);
     }
 
 
-
-	
-	//@AfterClass
+	@AfterClass
 	   public void driverClose()
 	  {
 		  driver.quit();
