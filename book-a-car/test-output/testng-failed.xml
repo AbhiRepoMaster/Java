@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.bookacar.testcases.Radio">
+      <class name="com.example.bookacar.testcases.HyperLink">
         <methods>
           <include name="setUp"/>
           <include name="driverClose"/>
-          <include name="testSelectAgeGroup"/>
+          <include name="testFindDuplicateLinksInForm"/>
         </methods>
-      </class> <!-- com.example.bookacar.testcases.Radio -->
+      </class> <!-- com.example.bookacar.testcases.HyperLink -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

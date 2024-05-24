@@ -37,7 +37,7 @@ public class Radio {
 
     }
 	
-	//@Test (priority = 1)
+	@Test (priority = 1)
 	public void favoriteBrowserRadioButton() {
 	    WebElement FirefoxRadioButton =
 	    		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Firefox']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]"))); //explicit wait
@@ -56,15 +56,13 @@ public class Radio {
 	    Assert.assertNotNull(selectedState, "Safari radio button is not selected");
 	}
 	
-	// @Test(priority = 2)
+	 @Test(priority = 2)
 	    public void testUnselectRadioButton() {
-	        // Locate the radio button element using the given XPath
 	        WebElement radioButton = driver.findElement(By.xpath("//label[text()='Bengaluru']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]"));
 
-	        // Check if the radio button is selected initially
 	        boolean isRadioButtonSelectedInitially = radioButton.isSelected();
 
-	        // Select the radio button (if not already selected)
+	        // check if not already selected)
 	        if (!isRadioButtonSelectedInitially) {
 	            radioButton.click();
 	        }
@@ -105,7 +103,7 @@ public class Radio {
 //	    }
 
 	    
-	 //   @Test(priority = 2)
+	    @Test(priority = 2)
 	    public void testUnselectRadioButton1() {
 	        WebElement radioButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Bengaluru']/preceding-sibling::div/div[contains(@class, 'ui-radiobutton-box')]")));
 
@@ -117,7 +115,6 @@ public class Radio {
 	            System.out.println("Already selected");
 	        }
 
-	        // Wait for 5 seconds
 	        try {
 	            Thread.sleep(5000);
 	        } catch (InterruptedException e) {
@@ -138,31 +135,22 @@ public class Radio {
 	    }
 
 
-	 //   @Test
+	    @Test
 	    public void testDefaultSelectedRadioButton() {
-	        // Find all radio buttons
 	        List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@type='radio']"));
 
 	        WebElement defaultSelectedRadioButton = null;
-
-	        // Iterate through radio buttons
 	        for (WebElement radioButton : radioButtons) {
-	            // Check if the radio button is selected
 	            if (radioButton.isSelected()) {
 	                defaultSelectedRadioButton = radioButton;
 	                break;
 	            }
 	        }
-
-	        // If a default selected radio button is found, print its ID
 	        if (defaultSelectedRadioButton != null) {
 	            System.out.println("Default selected radio button: " + defaultSelectedRadioButton.getAttribute("id"));
 	        } else {
-	            // If no default selected radio button is found, print a message
 	            System.out.println("No radio button is selected by default.");
 	        }
-
-	        // Assert if any radio button is selected by default
 	        Assert.assertNotNull(defaultSelectedRadioButton, "No radio button is selected by default.");
 	    }
 	    
