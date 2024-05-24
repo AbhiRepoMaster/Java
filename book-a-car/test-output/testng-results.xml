@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-24T12:16:02 IST" name="Default suite" finished-at="2024-05-24T12:16:11 IST" duration-ms="9563">
+  <suite started-at="2024-05-24T14:22:14 IST" name="Default suite" finished-at="2024-05-24T14:22:21 IST" duration-ms="7037">
     <groups>
     </groups>
-    <test started-at="2024-05-24T12:16:02 IST" name="Default test" finished-at="2024-05-24T12:16:11 IST" duration-ms="9563">
-      <class name="com.example.bookacar.testcases.Radio">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.Radio@6253c26]" started-at="2024-05-24T12:16:02 IST" name="setUp" finished-at="2024-05-24T12:16:05 IST" duration-ms="3835" status="PASS">
+    <test started-at="2024-05-24T14:22:14 IST" name="Default test" finished-at="2024-05-24T14:22:21 IST" duration-ms="7037">
+      <class name="com.example.bookacar.testcases.Test1">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.Test1@3cebbb30]" started-at="2024-05-24T14:22:14 IST" name="setUp" finished-at="2024-05-24T14:22:17 IST" duration-ms="2822" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testDefaultSelectedRadioButton()[pri:0, instance:com.example.bookacar.testcases.Radio@6253c26]" started-at="2024-05-24T12:16:05 IST" name="testDefaultSelectedRadioButton" finished-at="2024-05-24T12:16:06 IST" duration-ms="121" status="PASS">
+        <test-method signature="testRedirectToWebsite()[pri:0, instance:com.example.bookacar.testcases.Test1@3cebbb30]" started-at="2024-05-24T14:22:17 IST" name="testRedirectToWebsite" finished-at="2024-05-24T14:22:21 IST" duration-ms="3914" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDefaultSelectedRadioButton -->
-        <test-method signature="favoriteBrowserRadioButton()[pri:1, instance:com.example.bookacar.testcases.Radio@6253c26]" started-at="2024-05-24T12:16:06 IST" name="favoriteBrowserRadioButton" finished-at="2024-05-24T12:16:06 IST" duration-ms="126" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- favoriteBrowserRadioButton -->
-        <test-method signature="testUnselectRadioButton()[pri:2, instance:com.example.bookacar.testcases.Radio@6253c26]" started-at="2024-05-24T12:16:06 IST" name="testUnselectRadioButton" finished-at="2024-05-24T12:16:06 IST" duration-ms="94" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUnselectRadioButton -->
-        <test-method signature="testUnselectRadioButton1()[pri:2, instance:com.example.bookacar.testcases.Radio@6253c26]" started-at="2024-05-24T12:16:06 IST" name="testUnselectRadioButton1" finished-at="2024-05-24T12:16:11 IST" duration-ms="5124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUnselectRadioButton1 -->
-        <test-method is-config="true" signature="driverClose()[pri:0, instance:com.example.bookacar.testcases.Radio@6253c26]" started-at="2024-05-24T12:16:11 IST" name="driverClose" finished-at="2024-05-24T12:16:11 IST" duration-ms="208" status="PASS">
+        </test-method> <!-- testRedirectToWebsite -->
+        <test-method is-config="true" signature="driverClose()[pri:0, instance:com.example.bookacar.testcases.Test1@3cebbb30]" started-at="2024-05-24T14:22:21 IST" name="driverClose" finished-at="2024-05-24T14:22:21 IST" duration-ms="251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverClose -->
-      </class> <!-- com.example.bookacar.testcases.Radio -->
+      </class> <!-- com.example.bookacar.testcases.Test1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

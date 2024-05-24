@@ -102,7 +102,6 @@ public class BookACarForm {
         Select dealerStateSelect = new Select(stateDropdown);
         Thread.sleep(5000);
 
-        // Iterate through each dealer state
         for (WebElement stateOption : dealerStateSelect.getOptions()) {
             // Select a dealer state
             stateOption.click();
@@ -119,20 +118,15 @@ public class BookACarForm {
                 Select dealerNameSelect = new Select(dealerNameDropdown);
                 Thread.sleep(5000);
 
-                // Iterate through each dealer name option
                 for (WebElement dealerNameOption : dealerNameSelect.getOptions()) {
-                    // If the option is not the placeholder option with the text "Dealer Name", select it
                     if (!dealerNameOption.getText().equals("Dealer Name")) {
                         dealerNameSelect.selectByVisibleText(dealerNameOption.getText());
 
-                        // Print the selected dealer name
                         System.out.println("Selected Dealer Name for City " + cityOption.getText() + ": " + dealerNameOption.getText());
 
-                        // Assert if needed
                         Assert.assertEquals(dealerNameSelect.getFirstSelectedOption().getText(), dealerNameOption.getText(),
                                 "Selected Dealer Name does not match for City: " + cityOption.getText());
 
-                        // Break the loop as we have selected the dealer name
                         break;
                     }
                 }

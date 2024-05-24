@@ -37,10 +37,90 @@ public class Waits {
 
     }
 	
+//	@Test (priority = 1)
+//	public void testButtonVisibilityAfterClick() {
+//	    // Assuming driver is initialized and navigated to the page
+//
+//	    // Locate and click the initial button
+//	    WebElement initialButton = driver.findElement(By.xpath("//button[@id='j_idt87:j_idt89']//span[@class='ui-button-text ui-c'][normalize-space()='Click']"));
+//	    initialButton.click();
+//	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//	    WebElement newButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='I am here']")));
+//
+//	    // Verify the text on the new button
+//	    String buttonText = newButton.getText();
+//	    Assert.assertEquals(buttonText, "I am here", "Text on the new button is not as expected.");
+//	}
 	
+	
+	@Test (priority = 1)
+	public void testButtonVisibilityAfterClick() {
+	    WebElement initialButton = driver.findElement(By.xpath("//button[@id='j_idt87:j_idt89']//span[@class='ui-button-text ui-c'][normalize-space()='Click']"));
+	    String initialButtonText = initialButton.getText(); 
+	    initialButton.click();
+
+	    // Start timing
+	    long startTime = System.currentTimeMillis();
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement newButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='I am here']")));
+
+	    // Duration waited in milliseconds
+	    long endTime = System.currentTimeMillis();
+	    long duration = endTime - startTime; 
+
+	    
+	    String newButtonText = newButton.getText();
+
+	    System.out.println("Text on 1st button: " + initialButtonText);
+	    System.out.println("Text on 2nd button: " + newButtonText);
+	    System.out.println("Waited for: " + duration + " milliseconds");
+
+	    Assert.assertEquals(newButtonText, "I am here", "Text on the new button is not as expected.");
+	}
 
 
-//@AfterClass
+	
+	@Test (priority = 2)
+	
+	public void testButtonInvisibilityAfterClick() {
+	    WebElement triggerButton = driver.findElement(By.xpath("//button[@id='j_idt87:j_idt92']//span[@class='ui-button-text ui-c'][normalize-space()='Click']"));
+	    triggerButton.click();
+
+	    long startTime = System.currentTimeMillis();
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    boolean isButtonInvisible = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[normalize-space()='I am about to hide']")));
+
+	    long endTime = System.currentTimeMillis();
+	    long duration = endTime - startTime; 
+
+	    System.out.println("Waited for button to be invisible for: " + duration + " milliseconds");
+
+	    Assert.assertTrue(isButtonInvisible, "Button did not become invisible within the specified time.");
+	}
+
+
+	@Test (priority = 4)
+	
+	public void testButtonTextChangedAfterClick() {
+	    WebElement clickButton = driver.findElement(By.xpath("//button[@id='j_idt87:j_idt98']//span[@class='ui-button-text ui-c'][normalize-space()='Click']"));
+	    clickButton.click();
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement secondButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='I am going to change!']")));
+	    Assert.assertNotNull(secondButton, "Second button text did not change to 'I am going to change!'");
+	    String buttonText = secondButton.getText();
+	    System.out.println("Text on second button after 10 seconds: " + buttonText);
+	    WebElement thirdButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Did you notice?']")));
+	    Assert.assertNotNull(thirdButton, "Third button text did not change to 'Did you notice?'");
+	    String newText = thirdButton.getText();
+	    System.out.println("Text on third button after text change: " + newText);
+	}
+
+
+	
+	
+	
+@AfterClass
    public void driverClose()
   {
 	  driver.quit();
