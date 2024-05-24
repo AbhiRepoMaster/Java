@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-24T14:22:14 IST" name="Default suite" finished-at="2024-05-24T14:22:21 IST" duration-ms="7037">
+  <suite started-at="2024-05-24T14:50:52 IST" name="Default suite" finished-at="2024-05-24T14:51:02 IST" duration-ms="9966">
     <groups>
     </groups>
-    <test started-at="2024-05-24T14:22:14 IST" name="Default test" finished-at="2024-05-24T14:22:21 IST" duration-ms="7037">
-      <class name="com.example.bookacar.testcases.Test1">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.Test1@3cebbb30]" started-at="2024-05-24T14:22:14 IST" name="setUp" finished-at="2024-05-24T14:22:17 IST" duration-ms="2822" status="PASS">
+    <test started-at="2024-05-24T14:50:52 IST" name="Default test" finished-at="2024-05-24T14:51:02 IST" duration-ms="9966">
+      <class name="com.example.bookacar.testcases.HyperLink">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:50:52 IST" name="setUp" finished-at="2024-05-24T14:50:57 IST" duration-ms="4754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRedirectToWebsite()[pri:0, instance:com.example.bookacar.testcases.Test1@3cebbb30]" started-at="2024-05-24T14:22:17 IST" name="testRedirectToWebsite" finished-at="2024-05-24T14:22:21 IST" duration-ms="3914" status="PASS">
+        <test-method signature="testFindDuplicateLinksInForm()[pri:1, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:50:57 IST" name="testFindDuplicateLinksInForm" finished-at="2024-05-24T14:50:57 IST" duration-ms="206" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testRedirectToWebsite -->
-        <test-method is-config="true" signature="driverClose()[pri:0, instance:com.example.bookacar.testcases.Test1@3cebbb30]" started-at="2024-05-24T14:22:21 IST" name="driverClose" finished-at="2024-05-24T14:22:21 IST" duration-ms="251" status="PASS">
+        </test-method> <!-- testFindDuplicateLinksInForm -->
+        <test-method signature="testFindLinkDestination()[pri:2, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:50:57 IST" name="testFindLinkDestination" finished-at="2024-05-24T14:50:57 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindLinkDestination -->
+        <test-method signature="testRedirectionToDashboard()[pri:4, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:50:57 IST" name="testRedirectionToDashboard" finished-at="2024-05-24T14:51:00 IST" duration-ms="3252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRedirectionToDashboard -->
+        <test-method signature="testLinkCount()[pri:5, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:51:00 IST" name="testLinkCount" finished-at="2024-05-24T14:51:01 IST" duration-ms="1031" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLinkCount -->
+        <test-method signature="testLayoutLinkCountAndPrintText()[pri:6, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:51:01 IST" name="testLayoutLinkCountAndPrintText" finished-at="2024-05-24T14:51:02 IST" duration-ms="380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLayoutLinkCountAndPrintText -->
+        <test-method is-config="true" signature="driverClose()[pri:0, instance:com.example.bookacar.testcases.HyperLink@49049a04]" started-at="2024-05-24T14:51:02 IST" name="driverClose" finished-at="2024-05-24T14:51:02 IST" duration-ms="235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverClose -->
-      </class> <!-- com.example.bookacar.testcases.Test1 -->
+      </class> <!-- com.example.bookacar.testcases.HyperLink -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
