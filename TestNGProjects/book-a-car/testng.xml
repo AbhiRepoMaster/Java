@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.example.bookacar.testcases.Buttons"/>
+      <class name="com.example.bookacar.testcases.TestLeaf"/>
+      <class name="com.example.bookacar.testcases.Waits"/>
+      <class name="com.example.bookacar.testcases.BookACarForm"/>
+      <class name="com.example.bookacar.testcases.Radio"/>
+      <class name="com.example.bookacar.testcases.HyperLink"/>
+      <class name="com.example.bookacar.testcases.Checkbox"/>
+      <class name="com.example.bookacar.testcases.Select"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
