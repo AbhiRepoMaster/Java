@@ -13,17 +13,17 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.example.bookacar.pages.HomePage;
+import com.example.bookacar.pages.WindowsMain;
 
 public class Window {
 
     private WebDriver driver;
-    private HomePage homePage;
+    private WindowsMain homePage;
 
     @BeforeTest
     public void setup() {
         driver = new ChromeDriver();
-        homePage = new HomePage(driver);
+        homePage = new WindowsMain(driver);
     }
 
    @Test(priority = 1)

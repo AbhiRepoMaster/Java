@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.bookacar.datafetch.BaseDetails;
 
-public class HomePage implements BaseDetails {
+public class WindowsMain implements BaseDetails {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public HomePage(WebDriver driver) {
+    public WindowsMain(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
@@ -90,5 +90,6 @@ public class HomePage implements BaseDetails {
         WebElement testLink = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(clickTestTwoNewTabToOpen)));
         testLink.click();
     }
+    
     
 }
