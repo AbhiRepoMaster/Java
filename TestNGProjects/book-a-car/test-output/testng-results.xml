@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-06T13:58:58 IST" name="Default suite" finished-at="2024-06-06T13:59:14 IST" duration-ms="15730">
+  <suite started-at="2024-06-06T16:10:35 IST" name="Default suite" finished-at="2024-06-06T16:10:41 IST" duration-ms="5623">
     <groups>
     </groups>
-    <test started-at="2024-06-06T13:58:58 IST" name="Default test" finished-at="2024-06-06T13:59:14 IST" duration-ms="15730">
-      <class name="com.example.bookacar.testcases.Window">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.example.bookacar.testcases.Window@6253c26]" started-at="2024-06-06T13:58:58 IST" name="setup" finished-at="2024-06-06T13:59:02 IST" duration-ms="4181" status="PASS">
+    <test started-at="2024-06-06T16:10:35 IST" name="Default test" finished-at="2024-06-06T16:10:41 IST" duration-ms="5623">
+      <class name="com.example.bookacar.testcases.Frame">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.example.bookacar.testcases.Frame@6253c26]" started-at="2024-06-06T16:10:35 IST" name="setup" finished-at="2024-06-06T16:10:38 IST" duration-ms="3061" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testWindowSwitch()[pri:1, instance:com.example.bookacar.testcases.Window@6253c26]" started-at="2024-06-06T13:59:02 IST" name="testWindowSwitch" finished-at="2024-06-06T13:59:03 IST" duration-ms="1380" status="PASS">
+        <test-method signature="testButtonInNestedFrame()[pri:1, instance:com.example.bookacar.testcases.Frame@6253c26]" started-at="2024-06-06T16:10:38 IST" name="testButtonInNestedFrame" finished-at="2024-06-06T16:10:39 IST" duration-ms="937" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testWindowSwitch -->
-        <test-method signature="testWindowCountAndTabs()[pri:2, instance:com.example.bookacar.testcases.Window@6253c26]" started-at="2024-06-06T13:59:03 IST" name="testWindowCountAndTabs" finished-at="2024-06-06T13:59:06 IST" duration-ms="2505" status="PASS">
+        </test-method> <!-- testButtonInNestedFrame -->
+        <test-method signature="testCountIFrames()[pri:2, instance:com.example.bookacar.testcases.Frame@6253c26]" started-at="2024-06-06T16:10:39 IST" name="testCountIFrames" finished-at="2024-06-06T16:10:40 IST" duration-ms="960" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testWindowCountAndTabs -->
-        <test-method signature="testCloseWindowsExceptPrimary()[pri:3, instance:com.example.bookacar.testcases.Window@6253c26]" started-at="2024-06-06T13:59:06 IST" name="testCloseWindowsExceptPrimary" finished-at="2024-06-06T13:59:08 IST" duration-ms="2067" status="PASS">
+        </test-method> <!-- testCountIFrames -->
+        <test-method signature="testButtonInSingleFrame()[pri:3, instance:com.example.bookacar.testcases.Frame@6253c26]" started-at="2024-06-06T16:10:40 IST" name="testButtonInSingleFrame" finished-at="2024-06-06T16:10:40 IST" duration-ms="391" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCloseWindowsExceptPrimary -->
-        <test-method signature="testTwoNewTabToOpen()[pri:4, instance:com.example.bookacar.testcases.Window@6253c26]" started-at="2024-06-06T13:59:08 IST" name="testTwoNewTabToOpen" finished-at="2024-06-06T13:59:13 IST" duration-ms="5291" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwoNewTabToOpen -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.example.bookacar.testcases.Window@6253c26]" started-at="2024-06-06T13:59:13 IST" name="teardown" finished-at="2024-06-06T13:59:14 IST" duration-ms="215" status="PASS">
+        </test-method> <!-- testButtonInSingleFrame -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.example.bookacar.testcases.Frame@6253c26]" started-at="2024-06-06T16:10:40 IST" name="teardown" finished-at="2024-06-06T16:10:41 IST" duration-ms="214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.example.bookacar.testcases.Window -->
+      </class> <!-- com.example.bookacar.testcases.Frame -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

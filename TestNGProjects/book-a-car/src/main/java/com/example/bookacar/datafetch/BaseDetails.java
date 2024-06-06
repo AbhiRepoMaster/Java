@@ -3,6 +3,7 @@ package com.example.bookacar.datafetch;
 public interface BaseDetails {
 	//BaseUrl Link
 	String BaseUrlWindowLnk = "https://leafground.com/window.xhtml";
+	String BaseUrlFrameLnk = "https://leafground.com/frame.xhtml";
 	
 
 	//Windows class xpaths
