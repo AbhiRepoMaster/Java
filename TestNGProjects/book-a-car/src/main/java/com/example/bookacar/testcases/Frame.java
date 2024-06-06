@@ -41,13 +41,10 @@ public class Frame implements BaseDetails {
         navigateToFramepage();
         
         wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("iframe")));
-        // Switch to the first iframe
         driver.switchTo().frame(0); 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Click")));
         WebElement button = driver.findElement(By.id("Click"));
         button.click();
-
-        // Verify that the button's text has changed
         wait.until(ExpectedConditions.textToBe(By.id("Click"), "Hurray! You Clicked Me."));
         String buttonText = button.getText();
         Assert.assertEquals(buttonText, "Hurray! You Clicked Me.");
@@ -67,13 +64,9 @@ public class Frame implements BaseDetails {
     @Test (priority = 3)
     public void testButtonInSingleFrame() {
         navigateToFramepage();
-
         wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("iframe")));
-
         driver.switchTo().frame(0);
-
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Click")));
-
         WebElement button = driver.findElement(By.id("Click"));
         button.click();
         wait.until(ExpectedConditions.textToBe(By.id("Click"), "Hurray! You Clicked Me."));
