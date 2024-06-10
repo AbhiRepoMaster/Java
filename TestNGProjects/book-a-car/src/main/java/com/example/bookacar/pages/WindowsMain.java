@@ -55,6 +55,7 @@ public class WindowsMain implements BaseDetails {
     }
 
     public void printTabNamesAndCount() {
+    	
         // wait.until(ExpectedConditions.numberOfWindowsToBe(3));
         Set<String> handles = driver.getWindowHandles();
         System.out.println("Total number of windows opened: " + handles.size());
@@ -80,7 +81,7 @@ public class WindowsMain implements BaseDetails {
     
     
     public void clickOpenMultipleButtonTwo() {
-        WebElement openMultipleButton = driver.findElement(By.xpath(MultipleButtonTwo));
+        WebElement openMultipleButton = driver.findElement(By.xpath(MultipleButtonCloseWindow));
         openMultipleButton.click();
     }
     

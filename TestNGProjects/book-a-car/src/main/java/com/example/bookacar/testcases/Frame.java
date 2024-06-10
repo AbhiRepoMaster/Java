@@ -74,7 +74,6 @@ public class Frame implements BaseDetails {
         Assert.assertEquals(buttonText, "Hurray! You Clicked Me.");
     }
     
-    
     @AfterTest
     public void teardown() {
         driver.quit();

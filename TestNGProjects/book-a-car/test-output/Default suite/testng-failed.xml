@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.bookacar.testcases.Frame">
+      <class name="com.example.bookacar.testcases.Alerts">
         <methods>
-          <include name="testCountIFrames"/>
-          <include name="teardown"/>
+          <include name="SweetAlertAlert"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.example.bookacar.testcases.Frame -->
+      </class> <!-- com.example.bookacar.testcases.Alerts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
