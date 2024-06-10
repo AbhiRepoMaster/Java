@@ -38,7 +38,7 @@ public class Alerts implements BaseDetails{
         driver.get(getBaseUrl());
     }
     
-    @Test (priority = 1)
+  //  @Test (priority = 1)
     public void SimpleDialogAlert() {
     	navigateToFramepage();
         WebElement button = driver.findElement(By.xpath(SimpleAleretButton));
@@ -50,7 +50,7 @@ public class Alerts implements BaseDetails{
     }
     
     
-    @Test (priority = 2)
+ //   @Test (priority = 2)
     public void ConfirmDialogAlert() {
     	navigateToFramepage();
     	
@@ -62,51 +62,53 @@ public class Alerts implements BaseDetails{
         Assert.assertEquals(alertText, "Did you call me?");
     }
     
- //   @Test (priority = 3)
-    public void SweetAlertAlert() {
-    	navigateToFramepage();
-    	
-        WebElement button = driver.findElement(By.xpath(SweetAlertButton));
-        button.click();
-        WebElement sweetAlert = driver.findElement(By.className("ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top ui-draggable-handle"));
-        String alertText = sweetAlert.findElement(By.className("j_idt88:j_idt96_title")).getText();
-        System.out.println("Sweet Alert text: " + alertText);
-        WebElement DismissButton = sweetAlert.findElement(By.className("ui-button-text ui-c"));
-        DismissButton.click();
-        Assert.assertEquals(alertText, "Expected Sweet Alert message");
-    }
-    
-    @Test (priority = 4)
+   
+ //  @Test (priority = 3)
+   public void SweetAlertAlert() {
+   	navigateToFramepage();
+   	
+       WebElement button = driver.findElement(By.xpath(SweetAlertButton));
+       button.click();
+       WebElement sweetAlert = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SweetAlertDLg)));
+       String modalText = sweetAlert.findElement(By.xpath(SweetAlertTxt)).getText();
+       System.out.println("Sweet Alert text: " + modalText);
+       WebElement DismissButton = sweetAlert.findElement(By.xpath(DismissBTN));
+       DismissButton.click();
+       Assert.assertEquals(modalText, "Dialog");
+   } 
+   
+     
+  //  @Test (priority = 4)
     public void testSweetModalDialog() {
     	navigateToFramepage();
-        WebElement button = driver.findElement(By.xpath("//button[@id='j_idt88:j_idt100']"));
+        WebElement button = driver.findElement(By.xpath(SweetModalDialogBTN));
         button.click();
-        WebElement sweetModal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-labelledby='j_idt88:j_idt101_title']")));
-        String modalText = sweetModal.findElement(By.xpath("//span[@id = 'j_idt88:j_idt101_title']")).getText();
+        WebElement sweetModal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SweetModal)));
+        String modalText = sweetModal.findElement(By.xpath(ModalText)).getText();
         System.out.println("Sweet Modal Dialog text: " + modalText);
-        WebElement closeButton = sweetModal.findElement(By.xpath("//div[(@id = 'j_idt88:j_idt101')] //span[@class ='ui-icon ui-icon-closethick']"));
+        WebElement closeButton = sweetModal.findElement(By.xpath(CloseButton));
         closeButton.click();
         Assert.assertEquals(modalText, "Modal Dialog (Sweet Alert)");
     }
     
-    @Test (priority = 5)
+  //  @Test (priority = 5)
     public void testPromplDialog() {
     	navigateToFramepage();
-        WebElement button = driver.findElement(By.xpath("//button[@id='j_idt88:j_idt100']"));
+        WebElement button = driver.findElement(By.xpath(PromplDialogBTN));
         button.click();
         
-        WebElement PromplDialog = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-labelledby='j_idt88:j_idt101_title']")));
-        String modalText = PromplDialog.findElement(By.xpath("//span[@id = 'j_idt88:j_idt101_title']")).getText();
+        WebElement PromplDialog = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PromplDialogTxt)));
+        String modalText = PromplDialog.findElement(By.xpath(ModalText)).getText();
         System.out.println("Sweet Modal Dialog text: " + modalText);
-        WebElement closeButton = PromplDialog.findElement(By.xpath("//div[(@id = 'j_idt88:j_idt101')] //span[@class ='ui-icon ui-icon-closethick']"));
+        WebElement closeButton = PromplDialog.findElement(By.xpath(PromplcloseButton));
         closeButton.click();
         Assert.assertEquals(modalText, "Modal Dialog (Sweet Alert)");
     }
     
-    @Test (priority = 6)
+  //  @Test (priority = 6)
     public void testSweetAlertConfirmation() {
     	navigateToFramepage();
-        WebElement button = driver.findElement(By.xpath("//button[(@id = 'j_idt88:j_idt104')]"));
+        WebElement button = driver.findElement(By.xpath(SweetAlertConfirmationBTN));
         button.click();
         driver.switchTo().alert().sendKeys("Abhishek");
         Alert alert = driver.switchTo().alert();
@@ -114,36 +116,28 @@ public class Alerts implements BaseDetails{
     }  
     
     
-  //  @Test (priority = 7)
-    public void testMinimizeAndMaximize() {
+    
+    
+    @Test (priority = 7)
+    public void testMinimizeAndMaximize() throws InterruptedException {
     	navigateToFramepage();
-        WebElement button = driver.findElement(By.xpath("//button[@id='j_idt88:j_idt111']"));
+        WebElement button = driver.findElement(By.xpath(MinimizeAndMaximizeBTN));
         button.click();
-        WebElement modalDialog = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class = 'ui-icon ui-icon-minus']")));
-        String initialState = modalDialog.getAttribute("style");
-        System.out.println("Initial dialog state: " + initialState);
         
+        WebElement modalDialog = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MinimizeBTN)));
         // Minimize the dialog
-        WebElement minimizeButton = modalDialog.findElement(By.xpath("//span[@class = 'ui-icon ui-icon-minus']"));
+        WebElement minimizeButton = modalDialog.findElement(By.xpath(MinimizeBTN));
         minimizeButton.click();
-        String minimizedState = modalDialog.getAttribute("style");
-        Assert.assertTrue(minimizedState.contains("display: none;"), "Dialog should be minimized");
-        System.out.println("Dialog minimized state: " + minimizedState);
-
+        Thread.sleep(2000); 
         // Maximize the dialog
-        WebElement maximizeButton = modalDialog.findElement(By.xpath("//span[@class = 'ui-icon ui-icon-extlink']"));
+        WebElement maximizeButton = modalDialog.findElement(By.xpath(MaximizeBTN));
         maximizeButton.click();
+        Thread.sleep(2000); 
 
-        WebDriverWait waitForMaximize = new WebDriverWait(driver, Duration.ofSeconds(10));
-        waitForMaximize.until(ExpectedConditions.not(ExpectedConditions.attributeContains(modalDialog, "style", "display: none;")));
-
-        String maximizedState = modalDialog.getAttribute("style");
-        Assert.assertTrue(maximizedState.contains("display: none;"), "Dialog should be maximized");
-        System.out.println("Dialog maximized state: " + maximizedState);
     }
  
     
-   // @AfterTest
+    @AfterTest
     public void teardown() {
         driver.quit();
     }

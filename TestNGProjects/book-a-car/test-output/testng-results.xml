@@ -1,36 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-10T12:49:08 IST" name="Default suite" finished-at="2024-06-10T12:49:13 IST" duration-ms="5345">
+  <suite started-at="2024-06-10T15:25:22 IST" name="Default suite" finished-at="2024-06-10T15:25:30 IST" duration-ms="8007">
     <groups>
     </groups>
-    <test started-at="2024-06-10T12:49:08 IST" name="Default test" finished-at="2024-06-10T12:49:13 IST" duration-ms="5345">
+    <test started-at="2024-06-10T15:25:22 IST" name="Default test" finished-at="2024-06-10T15:25:30 IST" duration-ms="8007">
       <class name="com.example.bookacar.testcases.Alerts">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.example.bookacar.testcases.Alerts@27462a88]" started-at="2024-06-10T12:49:08 IST" name="setup" finished-at="2024-06-10T12:49:11 IST" duration-ms="2740" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.example.bookacar.testcases.Alerts@82de64a]" started-at="2024-06-10T15:25:22 IST" name="setup" finished-at="2024-06-10T15:25:25 IST" duration-ms="2629" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="SimpleDialogAlert()[pri:1, instance:com.example.bookacar.testcases.Alerts@27462a88]" started-at="2024-06-10T12:49:11 IST" name="SimpleDialogAlert" finished-at="2024-06-10T12:49:11 IST" duration-ms="794" status="PASS">
+        <test-method signature="testMinimizeAndMaximize()[pri:7, instance:com.example.bookacar.testcases.Alerts@82de64a]" started-at="2024-06-10T15:25:25 IST" name="testMinimizeAndMaximize" finished-at="2024-06-10T15:25:30 IST" duration-ms="5093" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SimpleDialogAlert -->
-        <test-method signature="ConfirmDialogAlert()[pri:2, instance:com.example.bookacar.testcases.Alerts@27462a88]" started-at="2024-06-10T12:49:11 IST" name="ConfirmDialogAlert" finished-at="2024-06-10T12:49:12 IST" duration-ms="620" status="PASS">
+        </test-method> <!-- testMinimizeAndMaximize -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.example.bookacar.testcases.Alerts@82de64a]" started-at="2024-06-10T15:25:30 IST" name="teardown" finished-at="2024-06-10T15:25:30 IST" duration-ms="212" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ConfirmDialogAlert -->
-        <test-method signature="testSweetModalDialog()[pri:4, instance:com.example.bookacar.testcases.Alerts@27462a88]" started-at="2024-06-10T12:49:12 IST" name="testSweetModalDialog" finished-at="2024-06-10T12:49:12 IST" duration-ms="471" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSweetModalDialog -->
-        <test-method signature="testPromplDialog()[pri:5, instance:com.example.bookacar.testcases.Alerts@27462a88]" started-at="2024-06-10T12:49:12 IST" name="testPromplDialog" finished-at="2024-06-10T12:49:13 IST" duration-ms="379" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testPromplDialog -->
-        <test-method signature="testSweetAlertConfirmation()[pri:6, instance:com.example.bookacar.testcases.Alerts@27462a88]" started-at="2024-06-10T12:49:13 IST" name="testSweetAlertConfirmation" finished-at="2024-06-10T12:49:13 IST" duration-ms="284" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSweetAlertConfirmation -->
+        </test-method> <!-- teardown -->
       </class> <!-- com.example.bookacar.testcases.Alerts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

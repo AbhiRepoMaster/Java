@@ -5,7 +5,8 @@
     <classes>
       <class name="com.example.bookacar.testcases.Alerts">
         <methods>
-          <include name="SweetAlertAlert"/>
+          <include name="teardown"/>
+          <include name="testMinimizeAndMaximize"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.Alerts -->
