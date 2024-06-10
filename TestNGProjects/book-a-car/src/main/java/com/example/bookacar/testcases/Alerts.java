@@ -38,7 +38,7 @@ public class Alerts implements BaseDetails{
         driver.get(getBaseUrl());
     }
     
-  //  @Test (priority = 1)
+    @Test (priority = 1)
     public void SimpleDialogAlert() {
     	navigateToFramepage();
         WebElement button = driver.findElement(By.xpath(SimpleAleretButton));
@@ -50,7 +50,7 @@ public class Alerts implements BaseDetails{
     }
     
     
- //   @Test (priority = 2)
+    @Test (priority = 2)
     public void ConfirmDialogAlert() {
     	navigateToFramepage();
     	
@@ -63,7 +63,7 @@ public class Alerts implements BaseDetails{
     }
     
    
- //  @Test (priority = 3)
+   @Test (priority = 3)
    public void SweetAlertAlert() {
    	navigateToFramepage();
    	
@@ -78,7 +78,7 @@ public class Alerts implements BaseDetails{
    } 
    
      
-  //  @Test (priority = 4)
+    @Test (priority = 4)
     public void testSweetModalDialog() {
     	navigateToFramepage();
         WebElement button = driver.findElement(By.xpath(SweetModalDialogBTN));
@@ -91,7 +91,7 @@ public class Alerts implements BaseDetails{
         Assert.assertEquals(modalText, "Modal Dialog (Sweet Alert)");
     }
     
-  //  @Test (priority = 5)
+    @Test (priority = 5)
     public void testPromplDialog() {
     	navigateToFramepage();
         WebElement button = driver.findElement(By.xpath(PromplDialogBTN));
@@ -105,7 +105,7 @@ public class Alerts implements BaseDetails{
         Assert.assertEquals(modalText, "Modal Dialog (Sweet Alert)");
     }
     
-  //  @Test (priority = 6)
+    @Test (priority = 6)
     public void testSweetAlertConfirmation() {
     	navigateToFramepage();
         WebElement button = driver.findElement(By.xpath(SweetAlertConfirmationBTN));
@@ -128,11 +128,11 @@ public class Alerts implements BaseDetails{
         // Minimize the dialog
         WebElement minimizeButton = modalDialog.findElement(By.xpath(MinimizeBTN));
         minimizeButton.click();
-        Thread.sleep(2000); 
+        Thread.sleep(200); 
         // Maximize the dialog
         WebElement maximizeButton = modalDialog.findElement(By.xpath(MaximizeBTN));
         maximizeButton.click();
-        Thread.sleep(2000); 
+        Thread.sleep(200); 
 
     }
  

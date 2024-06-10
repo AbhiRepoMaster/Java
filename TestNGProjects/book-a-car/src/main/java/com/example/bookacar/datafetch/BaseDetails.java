@@ -5,7 +5,7 @@ public interface BaseDetails {
 	String BaseUrlWindowLnk = "https://leafground.com/window.xhtml";
 	String BaseUrlFrameLnk = "https://leafground.com/frame.xhtml";
 	String BaseUrlAlertLnk = "https://leafground.com/alert.xhtml";
-	
+	String BaseUrlDragLnk = "https://leafground.com/drag.xhtml";
 
 	//Windows class xpaths
 	String NewWindowButton = "j_idt88:new";
@@ -37,6 +37,12 @@ public interface BaseDetails {
 	String MinimizeAndMaximizeBTN = "//button[@id='j_idt88:j_idt111']"; 
 	String MinimizeBTN = "//span[@class = 'ui-icon ui-icon-minus']"; 
 	String MaximizeBTN = "//span[@class = 'ui-icon ui-icon-extlink']"; 
+	
+	
+	//Drag Xpath
+	
+	String DragDropBox = "//div[@id = 'form:conpnl']";
+	
 
 	
 }
