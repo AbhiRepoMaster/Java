@@ -5,8 +5,7 @@
     <classes>
       <class name="com.example.bookacar.testcases.Drag">
         <methods>
-          <include name="testDragAction"/>
-          <include name="teardown"/>
+          <include name="testRangeSlider"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.example.bookacar.testcases.Drag -->
