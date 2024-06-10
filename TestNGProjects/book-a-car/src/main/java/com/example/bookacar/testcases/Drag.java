@@ -59,15 +59,9 @@ public class Drag implements BaseDetails {
     	navigateToDragDroppage();
         WebElement draggableElementInitial = driver.findElement(By.id("form:j_idt94:j_idt95"));
         WebElement draggableElementFinal = driver.findElement(By.id("form:j_idt94:j_idt99"));
-        
         Actions actions = new Actions(driver);
         actions.dragAndDrop(draggableElementInitial, draggableElementFinal).perform();
 
-        //new position of the element
-//        String newPosition = draggableElement.getAttribute("style");
-//        System.out.println("New position: " + newPosition);
-//        Assert.assertTrue(newPosition.contains("left: 241px;"));
-//        Assert.assertTrue(newPosition.contains("top: 0px;"));
     }
     
     
