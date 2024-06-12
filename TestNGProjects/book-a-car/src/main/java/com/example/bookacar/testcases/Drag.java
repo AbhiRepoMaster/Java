@@ -64,8 +64,8 @@ public class Drag implements BaseDetails {
     @Test (priority = 2)
     public void testDraggableColumns() {
     	navigateToDragDroppage();
-        WebElement draggableElementInitial = driver.findElement(By.id("form:j_idt94:j_idt95"));
-        WebElement draggableElementFinal = driver.findElement(By.id("form:j_idt94:j_idt97"));
+        WebElement draggableElementInitial = driver.findElement(By.id(DraggableColumnsInit));
+        WebElement draggableElementFinal = driver.findElement(By.id(DraggableColumnsFinl));
         Actions actions = new Actions(driver);
         actions.dragAndDrop(draggableElementInitial, draggableElementFinal).perform();
 
@@ -75,7 +75,7 @@ public class Drag implements BaseDetails {
     public void testResizeImageWithActionsAndNotification() {
     	wait = new WebDriverWait(this.driver, Duration.ofSeconds(60));        
         // Locate the resize handle and the image
-        WebElement resizeHandle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui-resizable-handle ui-resizable-e']")));
+        WebElement resizeHandle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ImageResizeHandle)));
         WebElement image = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("form:logo")));
         
         // Get initial size of the image
@@ -114,7 +114,7 @@ public class Drag implements BaseDetails {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(draggable, droppable).perform();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement dropMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='form:drop_content']/p[contains(text(), 'Dropped!')]")));
+        WebElement dropMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dropMessageTxt)));
 
         Assert.assertNotNull(dropMessage, "The element should be successfully dropped into the target, and a confirmation message should appear.");
     }
@@ -123,9 +123,9 @@ public class Drag implements BaseDetails {
     
     @Test (priority = 5)
     public void testDraggableRow() {
-    	WebElement tableBody = driver.findElement(By.xpath("//tbody[@id = 'form:j_idt111_data']"));
-        WebElement rowToDrag = tableBody.findElement(By.xpath("//tbody[@id = 'form:j_idt111_data']//tr[@data-ri='0']"));
-        WebElement targetRow = tableBody.findElement(By.xpath("//tbody[@id = 'form:j_idt111_data']//tr[@data-ri='4']"));
+    	WebElement tableBody = driver.findElement(By.xpath(DraggableRowtableBody));
+        WebElement rowToDrag = tableBody.findElement(By.xpath(DraggableRowtableBodyrowToDrag));
+        WebElement targetRow = tableBody.findElement(By.xpath(DraggableRowtableBodyrowToDragtargetRow));
         Actions actions = new Actions(driver);
         actions.clickAndHold(rowToDrag).moveToElement(targetRow)
             //   .moveByOffset(0, 1) 
@@ -155,7 +155,7 @@ public class Drag implements BaseDetails {
         startButton.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.attributeToBe(By.id("form:j_idt121"), "aria-valuenow", "100"));
-        WebElement progressBarLabel = driver.findElement(By.cssSelector("#form\\:j_idt121 .ui-progressbar-label"));
+        WebElement progressBarLabel = driver.findElement(By.cssSelector(ProgressBarLabelXpt));
         String finalProgressText = progressBarLabel.getText();
         System.out.println("Final progress: " + finalProgressText);
         Assert.assertEquals(finalProgressText, "100%", "Progress bar should reach 100%");

@@ -42,7 +42,20 @@ public interface BaseDetails {
 	//Drag Xpath
 	
 	String DragDropBox = "//div[@id = 'form:conpnl']";
+	String DraggableColumnsInit = "form:j_idt94:j_idt95";
+	String DraggableColumnsFinl = "form:j_idt94:j_idt97";
 	
+	String ImageResizeHandle = "//div[@class='ui-resizable-handle ui-resizable-e']";
+	
+	String dropMessageTxt = "//div[@id='form:drop_content']/p[contains(text(), 'Dropped!')]";
+	
+	String DraggableRowtableBody = "//tbody[@id = 'form:j_idt111_data']";
+	String DraggableRowtableBodyrowToDrag = "//tbody[@id = 'form:j_idt111_data']//tr[@data-ri='0']";
+	String DraggableRowtableBodyrowToDragtargetRow = "//tbody[@id = 'form:j_idt111_data']//tr[@data-ri='4']";
+
+	
+	String ProgressBarLabelXpt = "#form\\:j_idt121 .ui-progressbar-label";
+
 
 	
 }
