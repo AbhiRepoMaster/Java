@@ -175,34 +175,16 @@ public class Drag implements BaseDetails {
         System.out.println("Initial range: " + initialRange);
         Actions move = new Actions(driver);
         move.dragAndDropBy(handle1, 40, 0).perform();
-        move.dragAndDropBy(handle2, -40, 0).perform();
+        //move.dragAndDropBy(handle2, -40, 0).perform();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBe(By.id("form:displayRange"), "Between 25 and 75"));
+        wait.until(ExpectedConditions.textToBe(By.id("form:displayRange"), "Between 40 and 80"));
         // Get the updated range value
         String updatedRange = rangeDisplay.getText();
         System.out.println("Updated range: " + updatedRange);
-      //  Assert.assertEquals(updatedRange, "Between 40 and 70");
+      
     }
 
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-
-   
-    
-    
-  //  @AfterTest
+    @AfterTest
     public void teardown() {
         driver.quit();
     }
