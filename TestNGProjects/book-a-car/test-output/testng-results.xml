@@ -1,41 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-12T11:31:57 IST" name="Default suite" finished-at="2024-06-12T11:32:18 IST" duration-ms="20370">
+  <suite started-at="2024-06-12T11:44:29 IST" name="Default suite" finished-at="2024-06-12T11:44:33 IST" duration-ms="4420">
     <groups>
     </groups>
-    <test started-at="2024-06-12T11:31:57 IST" name="Default test" finished-at="2024-06-12T11:32:18 IST" duration-ms="20370">
+    <test started-at="2024-06-12T11:44:29 IST" name="Default test" finished-at="2024-06-12T11:44:33 IST" duration-ms="4420">
       <class name="com.example.bookacar.testcases.Drag">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:31:57 IST" name="setup" finished-at="2024-06-12T11:32:00 IST" duration-ms="3123" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.example.bookacar.testcases.Drag@67f639d3]" started-at="2024-06-12T11:44:29 IST" name="setup" finished-at="2024-06-12T11:44:32 IST" duration-ms="3636" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testDragAction()[pri:1, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:00 IST" name="testDragAction" finished-at="2024-06-12T11:32:03 IST" duration-ms="2176" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDragAction -->
-        <test-method signature="testDraggableColumns()[pri:2, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:03 IST" name="testDraggableColumns" finished-at="2024-06-12T11:32:03 IST" duration-ms="520" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDraggableColumns -->
-        <test-method signature="testResizeImageWithActionsAndNotification()[pri:3, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:03 IST" name="testResizeImageWithActionsAndNotification" finished-at="2024-06-12T11:32:04 IST" duration-ms="563" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testResizeImageWithActionsAndNotification -->
-        <test-method signature="testDraggableRow()[pri:5, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:04 IST" name="testDraggableRow" finished-at="2024-06-12T11:32:04 IST" duration-ms="722" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDraggableRow -->
-        <test-method signature="testProgressBar()[pri:6, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:04 IST" name="testProgressBar" finished-at="2024-06-12T11:32:17 IST" duration-ms="12404" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testProgressBar -->
-        <test-method signature="testRangeSlider()[pri:7, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:17 IST" name="testRangeSlider" finished-at="2024-06-12T11:32:17 IST" duration-ms="521" status="PASS">
+        <test-method signature="testRangeSlider()[pri:7, instance:com.example.bookacar.testcases.Drag@67f639d3]" started-at="2024-06-12T11:44:32 IST" name="testRangeSlider" finished-at="2024-06-12T11:44:33 IST" duration-ms="529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRangeSlider -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.example.bookacar.testcases.Drag@82de64a]" started-at="2024-06-12T11:32:17 IST" name="teardown" finished-at="2024-06-12T11:32:18 IST" duration-ms="283" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.example.bookacar.testcases.Drag@67f639d3]" started-at="2024-06-12T11:44:33 IST" name="teardown" finished-at="2024-06-12T11:44:33 IST" duration-ms="185" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
